@@ -13,14 +13,16 @@
 		F02C0E321DB82AD8009EDAFC /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E2C1DB82AD8009EDAFC /* Item+CoreDataProperties.m */; };
 		F02C0E331DB82AD8009EDAFC /* List+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E2E1DB82AD8009EDAFC /* List+CoreDataClass.m */; };
 		F02C0E341DB82AD8009EDAFC /* List+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E301DB82AD8009EDAFC /* List+CoreDataProperties.m */; };
+		F02C0E381DB83077009EDAFC /* ListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E371DB83077009EDAFC /* ListVC.m */; };
+		F02C0E3B1DB8308D009EDAFC /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E3A1DB8308D009EDAFC /* ItemVC.m */; };
+		F02C0E3E1DB83216009EDAFC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E3D1DB83216009EDAFC /* CoreDataTableViewController.m */; };
+		F02C0E431DB83624009EDAFC /* ListVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E421DB83624009EDAFC /* ListVCTests.m */; };
 		F0E3A5F11DB822BE00C9D078 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F01DB822BE00C9D078 /* main.m */; };
 		F0E3A5F41DB822BE00C9D078 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F31DB822BE00C9D078 /* AppDelegate.m */; };
-		F0E3A5F71DB822BE00C9D078 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F61DB822BE00C9D078 /* ViewController.m */; };
 		F0E3A5FA1DB822BE00C9D078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E3A5F81DB822BE00C9D078 /* Main.storyboard */; };
 		F0E3A5FD1DB822BE00C9D078 /* SimpleTO_DOList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5FB1DB822BE00C9D078 /* SimpleTO_DOList.xcdatamodeld */; };
 		F0E3A5FF1DB822BE00C9D078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0E3A5FE1DB822BE00C9D078 /* Assets.xcassets */; };
 		F0E3A6021DB822BE00C9D078 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E3A6001DB822BE00C9D078 /* LaunchScreen.storyboard */; };
-		F0E3A60D1DB822BE00C9D078 /* SimpleTO_DOListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A60C1DB822BE00C9D078 /* SimpleTO_DOListTests.m */; };
 		F50CBDEA7356F45FC73898DC /* libPods-SimpleTO-DOListTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AEE5E321FF8FAF58B605B76 /* libPods-SimpleTO-DOListTests.a */; };
 /* End PBXBuildFile section */
 
@@ -49,19 +51,23 @@
 		F02C0E2E1DB82AD8009EDAFC /* List+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "List+CoreDataClass.m"; sourceTree = "<group>"; };
 		F02C0E2F1DB82AD8009EDAFC /* List+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "List+CoreDataProperties.h"; sourceTree = "<group>"; };
 		F02C0E301DB82AD8009EDAFC /* List+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "List+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F02C0E361DB83077009EDAFC /* ListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListVC.h; sourceTree = "<group>"; };
+		F02C0E371DB83077009EDAFC /* ListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVC.m; sourceTree = "<group>"; };
+		F02C0E391DB8308D009EDAFC /* ItemVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemVC.h; sourceTree = "<group>"; };
+		F02C0E3A1DB8308D009EDAFC /* ItemVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemVC.m; sourceTree = "<group>"; };
+		F02C0E3C1DB83216009EDAFC /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
+		F02C0E3D1DB83216009EDAFC /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
+		F02C0E421DB83624009EDAFC /* ListVCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVCTests.m; sourceTree = "<group>"; };
 		F0E3A5EC1DB822BE00C9D078 /* SimpleTO-DOList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleTO-DOList.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E3A5F01DB822BE00C9D078 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0E3A5F21DB822BE00C9D078 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F0E3A5F31DB822BE00C9D078 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F0E3A5F51DB822BE00C9D078 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F0E3A5F61DB822BE00C9D078 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F0E3A5F91DB822BE00C9D078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0E3A5FC1DB822BE00C9D078 /* SimpleTO_DOList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SimpleTO_DOList.xcdatamodel; sourceTree = "<group>"; };
 		F0E3A5FE1DB822BE00C9D078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0E3A6011DB822BE00C9D078 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0E3A6031DB822BE00C9D078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0E3A6081DB822BE00C9D078 /* SimpleTO-DOListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SimpleTO-DOListTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0E3A60C1DB822BE00C9D078 /* SimpleTO_DOListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleTO_DOListTests.m; sourceTree = "<group>"; };
 		F0E3A60E1DB822BE00C9D078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAEDBCC8CF2471182DE14513 /* Pods-SimpleTO-DOList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTO-DOList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTO-DOList/Pods-SimpleTO-DOList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +127,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F02C0E351DB83058009EDAFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F02C0E3C1DB83216009EDAFC /* CoreDataTableViewController.h */,
+				F02C0E3D1DB83216009EDAFC /* CoreDataTableViewController.m */,
+				F02C0E361DB83077009EDAFC /* ListVC.h */,
+				F02C0E371DB83077009EDAFC /* ListVC.m */,
+				F02C0E391DB8308D009EDAFC /* ItemVC.h */,
+				F02C0E3A1DB8308D009EDAFC /* ItemVC.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F02C0E411DB83607009EDAFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F02C0E421DB83624009EDAFC /* ListVCTests.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F0E3A5E31DB822BD00C9D078 = {
 			isa = PBXGroup;
 			children = (
@@ -144,11 +171,10 @@
 		F0E3A5EE1DB822BE00C9D078 /* SimpleTO-DOList */ = {
 			isa = PBXGroup;
 			children = (
+				F02C0E351DB83058009EDAFC /* View */,
 				F02C0E281DB82AB0009EDAFC /* Model */,
 				F0E3A5F21DB822BE00C9D078 /* AppDelegate.h */,
 				F0E3A5F31DB822BE00C9D078 /* AppDelegate.m */,
-				F0E3A5F51DB822BE00C9D078 /* ViewController.h */,
-				F0E3A5F61DB822BE00C9D078 /* ViewController.m */,
 				F0E3A5F81DB822BE00C9D078 /* Main.storyboard */,
 				F0E3A5FE1DB822BE00C9D078 /* Assets.xcassets */,
 				F0E3A6001DB822BE00C9D078 /* LaunchScreen.storyboard */,
@@ -171,7 +197,7 @@
 		F0E3A60B1DB822BE00C9D078 /* SimpleTO-DOListTests */ = {
 			isa = PBXGroup;
 			children = (
-				F0E3A60C1DB822BE00C9D078 /* SimpleTO_DOListTests.m */,
+				F02C0E411DB83607009EDAFC /* View */,
 				F0E3A60E1DB822BE00C9D078 /* Info.plist */,
 			);
 			path = "SimpleTO-DOListTests";
@@ -383,7 +409,9 @@
 			files = (
 				F02C0E321DB82AD8009EDAFC /* Item+CoreDataProperties.m in Sources */,
 				F02C0E311DB82AD8009EDAFC /* Item+CoreDataClass.m in Sources */,
-				F0E3A5F71DB822BE00C9D078 /* ViewController.m in Sources */,
+				F02C0E3E1DB83216009EDAFC /* CoreDataTableViewController.m in Sources */,
+				F02C0E3B1DB8308D009EDAFC /* ItemVC.m in Sources */,
+				F02C0E381DB83077009EDAFC /* ListVC.m in Sources */,
 				F02C0E341DB82AD8009EDAFC /* List+CoreDataProperties.m in Sources */,
 				F0E3A5F41DB822BE00C9D078 /* AppDelegate.m in Sources */,
 				F0E3A5F11DB822BE00C9D078 /* main.m in Sources */,
@@ -396,7 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0E3A60D1DB822BE00C9D078 /* SimpleTO_DOListTests.m in Sources */,
+				F02C0E431DB83624009EDAFC /* ListVCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

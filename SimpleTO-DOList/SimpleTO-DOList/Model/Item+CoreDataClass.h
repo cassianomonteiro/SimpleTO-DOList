@@ -6,8 +6,7 @@
 //  Copyright © 2016 Cassiano Monteiro. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import <MagicalRecord/MagicalRecord.h>
 
 @class List;
 

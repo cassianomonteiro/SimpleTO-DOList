@@ -10,12 +10,12 @@ target 'SimpleTO-DOList' do
   pod 'Firebase/Crash'
   pod 'MagicalRecord'
   pod 'RestKit'
+  pod 'RestKit/Testing'
 
   target 'SimpleTO-DOListTests' do
     inherit! :search_paths
     # Pods for testing
 	pod 'OCMock'
-	pod 'RestKit/Testing'
   end
 
 end
