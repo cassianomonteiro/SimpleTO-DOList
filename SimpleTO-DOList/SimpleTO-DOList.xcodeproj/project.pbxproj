@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4D982A93BC3C36DAA416BE28 /* libPods-SimpleTO-DOList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6F8B9B78314D04353D4217 /* libPods-SimpleTO-DOList.a */; };
 		F02C0E271DB82562009EDAFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F02C0E261DB82562009EDAFC /* GoogleService-Info.plist */; };
+		F02C0E311DB82AD8009EDAFC /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E2A1DB82AD8009EDAFC /* Item+CoreDataClass.m */; };
+		F02C0E321DB82AD8009EDAFC /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E2C1DB82AD8009EDAFC /* Item+CoreDataProperties.m */; };
+		F02C0E331DB82AD8009EDAFC /* List+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E2E1DB82AD8009EDAFC /* List+CoreDataClass.m */; };
+		F02C0E341DB82AD8009EDAFC /* List+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E301DB82AD8009EDAFC /* List+CoreDataProperties.m */; };
 		F0E3A5F11DB822BE00C9D078 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F01DB822BE00C9D078 /* main.m */; };
 		F0E3A5F41DB822BE00C9D078 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F31DB822BE00C9D078 /* AppDelegate.m */; };
 		F0E3A5F71DB822BE00C9D078 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F61DB822BE00C9D078 /* ViewController.m */; };
@@ -37,6 +41,14 @@
 		BF6F8B9B78314D04353D4217 /* libPods-SimpleTO-DOList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleTO-DOList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47D79002DEBD163B3EF2C5D /* Pods-SimpleTO-DOListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTO-DOListTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTO-DOListTests/Pods-SimpleTO-DOListTests.release.xcconfig"; sourceTree = "<group>"; };
 		F02C0E261DB82562009EDAFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F02C0E291DB82AD8009EDAFC /* Item+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
+		F02C0E2A1DB82AD8009EDAFC /* Item+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
+		F02C0E2B1DB82AD8009EDAFC /* Item+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F02C0E2C1DB82AD8009EDAFC /* Item+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F02C0E2D1DB82AD8009EDAFC /* List+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "List+CoreDataClass.h"; sourceTree = "<group>"; };
+		F02C0E2E1DB82AD8009EDAFC /* List+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "List+CoreDataClass.m"; sourceTree = "<group>"; };
+		F02C0E2F1DB82AD8009EDAFC /* List+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "List+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F02C0E301DB82AD8009EDAFC /* List+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "List+CoreDataProperties.m"; sourceTree = "<group>"; };
 		F0E3A5EC1DB822BE00C9D078 /* SimpleTO-DOList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleTO-DOList.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E3A5F01DB822BE00C9D078 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0E3A5F21DB822BE00C9D078 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +106,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F02C0E281DB82AB0009EDAFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F02C0E291DB82AD8009EDAFC /* Item+CoreDataClass.h */,
+				F02C0E2A1DB82AD8009EDAFC /* Item+CoreDataClass.m */,
+				F02C0E2B1DB82AD8009EDAFC /* Item+CoreDataProperties.h */,
+				F02C0E2C1DB82AD8009EDAFC /* Item+CoreDataProperties.m */,
+				F02C0E2D1DB82AD8009EDAFC /* List+CoreDataClass.h */,
+				F02C0E2E1DB82AD8009EDAFC /* List+CoreDataClass.m */,
+				F02C0E2F1DB82AD8009EDAFC /* List+CoreDataProperties.h */,
+				F02C0E301DB82AD8009EDAFC /* List+CoreDataProperties.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F0E3A5E31DB822BD00C9D078 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +144,7 @@
 		F0E3A5EE1DB822BE00C9D078 /* SimpleTO-DOList */ = {
 			isa = PBXGroup;
 			children = (
+				F02C0E281DB82AB0009EDAFC /* Model */,
 				F0E3A5F21DB822BE00C9D078 /* AppDelegate.h */,
 				F0E3A5F31DB822BE00C9D078 /* AppDelegate.m */,
 				F0E3A5F51DB822BE00C9D078 /* ViewController.h */,
@@ -124,8 +152,6 @@
 				F0E3A5F81DB822BE00C9D078 /* Main.storyboard */,
 				F0E3A5FE1DB822BE00C9D078 /* Assets.xcassets */,
 				F0E3A6001DB822BE00C9D078 /* LaunchScreen.storyboard */,
-				F0E3A6031DB822BE00C9D078 /* Info.plist */,
-				F02C0E261DB82562009EDAFC /* GoogleService-Info.plist */,
 				F0E3A5FB1DB822BE00C9D078 /* SimpleTO_DOList.xcdatamodeld */,
 				F0E3A5EF1DB822BE00C9D078 /* Supporting Files */,
 			);
@@ -135,6 +161,8 @@
 		F0E3A5EF1DB822BE00C9D078 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0E3A6031DB822BE00C9D078 /* Info.plist */,
+				F02C0E261DB82562009EDAFC /* GoogleService-Info.plist */,
 				F0E3A5F01DB822BE00C9D078 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -353,9 +381,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F02C0E321DB82AD8009EDAFC /* Item+CoreDataProperties.m in Sources */,
+				F02C0E311DB82AD8009EDAFC /* Item+CoreDataClass.m in Sources */,
 				F0E3A5F71DB822BE00C9D078 /* ViewController.m in Sources */,
+				F02C0E341DB82AD8009EDAFC /* List+CoreDataProperties.m in Sources */,
 				F0E3A5F41DB822BE00C9D078 /* AppDelegate.m in Sources */,
 				F0E3A5F11DB822BE00C9D078 /* main.m in Sources */,
+				F02C0E331DB82AD8009EDAFC /* List+CoreDataClass.m in Sources */,
 				F0E3A5FD1DB822BE00C9D078 /* SimpleTO_DOList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
