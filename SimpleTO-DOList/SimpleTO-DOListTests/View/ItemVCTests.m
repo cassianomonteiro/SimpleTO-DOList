@@ -1,5 +1,5 @@
 //
-//  ListVCTests.m
+//  ItemVCTests.m
 //  SimpleTO-DOList
 //
 //  Created by Cassiano Monteiro on 19/10/16.
@@ -7,22 +7,23 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "ListVC.h"
+#import "ItemVC.h"
 
-@interface ListVCTests : XCTestCase
-@property (nonatomic, strong) ListVC *viewController;
+@interface ItemVCTests : XCTestCase
+@property (nonatomic, strong) ItemVC *viewController;
 @end
 
-@implementation ListVCTests
+@implementation ItemVCTests
 
 - (void)setUp {
     [super setUp];
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
     [MagicalRecord setupCoreDataStackWithInMemoryStore];
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"ListVC"];
+    self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"ItemVC"];
     
     // Initialize and test view at the same time
     XCTAssertNotNil(self.viewController.view);
@@ -34,6 +35,7 @@
     
     [MagicalRecord cleanUp];
 }
+
 
 #pragma mark - Initialization tests
 
@@ -61,15 +63,36 @@
 {
     // Given
     XCTAssertEqualObjects([List MR_numberOfEntities], @0);
-    [List MR_createEntity];
-    XCTAssertEqualObjects([List MR_numberOfEntities], @1);
+    XCTAssertEqualObjects([Item MR_numberOfEntities], @0);
+    List *list = [List MR_createEntity];
+    [list addItemsObject:[Item MR_createEntity]];
+    List *otherList = [List MR_createEntity];
+    [otherList addItemsObject:[Item MR_createEntity]];
+    [otherList addItemsObject:[Item MR_createEntity]];
+    XCTAssertEqualObjects([List MR_numberOfEntities], @2);
+    XCTAssertEqualObjects([Item MR_numberOfEntities], @3);
+    
+    // When
+    self.viewController.selectedList = otherList;
+    [self.viewController viewDidLoad];
+    
+    // Then
+    XCTAssertEqual([self.viewController numberOfSectionsInTableView:self.viewController.tableView], 1);
+    XCTAssertEqual([self.viewController tableView:self.viewController.tableView numberOfRowsInSection:0], 2);
+}
+
+- (void)testViewDidLoadShouldSetTitle
+{
+    // Given
+    List *list = [List MR_createEntity];
+    list.name = @"My list";
+    self.viewController.selectedList = list;
     
     // When
     [self.viewController viewDidLoad];
     
     // Then
-    XCTAssertEqual([self.viewController numberOfSectionsInTableView:self.viewController.tableView], 1);
-    XCTAssertEqual([self.viewController tableView:self.viewController.tableView numberOfRowsInSection:0], 1);
+    XCTAssertEqualObjects(self.viewController.title, list.name);
 }
 
 @end

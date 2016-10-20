@@ -7,8 +7,12 @@
 //
 
 #import "CoreDataTableViewController.h"
+#import "List+CoreDataClass.h"
+#import "Item+CoreDataClass.h"
 
 @interface ItemVC : CoreDataTableViewController
+
+@property (nonatomic, strong) List *selectedList;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 

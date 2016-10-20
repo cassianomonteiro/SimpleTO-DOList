@@ -7,6 +7,7 @@
 //
 
 #import "ListVC.h"
+#import "ItemVC.h"
 #import "AlertControllerFactory.h"
 
 static NSString *ListCellID = @"ListCell";
@@ -26,15 +27,21 @@ static NSString *ListCellID = @"ListCell";
     self.fetchedResultsController = [List MR_fetchController:fetchRequest delegate:self useFileCache:NO groupedBy:nil inContext:[NSManagedObjectContext MR_defaultContext]];
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.destinationViewController isKindOfClass:[ItemVC class]]) {
+        List *selectedList = self.fetchedResultsController.fetchedObjects[self.tableView.indexPathForSelectedRow.row];
+        ItemVC *destinationVC = segue.destinationViewController;
+        destinationVC.selectedList = selectedList;
+    }
 }
-*/
+
+#pragma mark - Actions
 
 - (IBAction)addTapped:(UIBarButtonItem *)sender
 {
@@ -68,10 +75,9 @@ static NSString *ListCellID = @"ListCell";
     
     List *list = self.fetchedResultsController.fetchedObjects[indexPath.row];
     cell.textLabel.text = list.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu items", list.items.count];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu item%@", list.items.count, (list.items.count > 1) ? @"s" : @""];
     
     return cell;
 }
-
 
 @end

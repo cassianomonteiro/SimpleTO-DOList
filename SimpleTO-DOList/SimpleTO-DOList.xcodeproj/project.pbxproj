@@ -18,6 +18,7 @@
 		F02C0E3E1DB83216009EDAFC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E3D1DB83216009EDAFC /* CoreDataTableViewController.m */; };
 		F02C0E431DB83624009EDAFC /* ListVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E421DB83624009EDAFC /* ListVCTests.m */; };
 		F02C0E461DB8464A009EDAFC /* AlertControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E451DB8464A009EDAFC /* AlertControllerFactory.m */; };
+		F02C0E481DB84C7A009EDAFC /* ItemVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E471DB84C7A009EDAFC /* ItemVCTests.m */; };
 		F0E3A5F11DB822BE00C9D078 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F01DB822BE00C9D078 /* main.m */; };
 		F0E3A5F41DB822BE00C9D078 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F31DB822BE00C9D078 /* AppDelegate.m */; };
 		F0E3A5FA1DB822BE00C9D078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E3A5F81DB822BE00C9D078 /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		F02C0E421DB83624009EDAFC /* ListVCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVCTests.m; sourceTree = "<group>"; };
 		F02C0E441DB8464A009EDAFC /* AlertControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertControllerFactory.h; sourceTree = "<group>"; };
 		F02C0E451DB8464A009EDAFC /* AlertControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertControllerFactory.m; sourceTree = "<group>"; };
+		F02C0E471DB84C7A009EDAFC /* ItemVCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemVCTests.m; sourceTree = "<group>"; };
 		F0E3A5EC1DB822BE00C9D078 /* SimpleTO-DOList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleTO-DOList.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E3A5F01DB822BE00C9D078 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0E3A5F21DB822BE00C9D078 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				F02C0E421DB83624009EDAFC /* ListVCTests.m */,
+				F02C0E471DB84C7A009EDAFC /* ItemVCTests.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F02C0E431DB83624009EDAFC /* ListVCTests.m in Sources */,
+				F02C0E481DB84C7A009EDAFC /* ItemVCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
