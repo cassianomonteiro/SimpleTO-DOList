@@ -52,4 +52,23 @@
     return alertController;
 }
 
++ (UIAlertController *)deleteAlertControllerWithTitle:(NSString *)title andMessage:(NSString *)message deletionHandler:(void (^)())deletionHandler cancelHandler:(void (^)())cancelHandler
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:message
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        deletionHandler();
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        cancelHandler();
+    }];
+    
+    [alertController addAction:deleteAction];
+    [alertController addAction:cancelAction];
+    
+    return alertController;
+}
+
 @end

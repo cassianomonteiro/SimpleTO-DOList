@@ -14,4 +14,9 @@
                                           andPlaceHolder:(NSString *)placeHolder
                                        completionHandler:(void (^)(NSString *text))completionHandler;
 
++ (UIAlertController *)deleteAlertControllerWithTitle:(NSString *)title
+                                           andMessage:(NSString *)message
+                                      deletionHandler:(void (^)())deletionHandler
+                                        cancelHandler:(void (^)())cancelHandler;
+
 @end

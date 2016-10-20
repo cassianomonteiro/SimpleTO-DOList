@@ -43,7 +43,7 @@ static NSString *ItemCellID = @"ItemCell";
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
         Item *newItem = [Item MR_createEntityInContext:localContext];
         newItem.itemDescription = description;
-        newItem.list = [localContext objectWithID:self.selectedList.objectID];
+        newItem.list = [self.selectedList MR_inContext:localContext];
         newItem.checked = NO;
     }];
 }
@@ -63,6 +63,35 @@ static NSString *ItemCellID = @"ItemCell";
     cell.accessoryType = item.checked ? UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     
     return cell;
+}
+
+#pragma mark - <UITableViewDelegate>
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Item *itemToCheck = self.fetchedResultsController.fetchedObjects[indexPath.row];
+    
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+        Item *itemToSave = [itemToCheck MR_inContext:localContext];
+        itemToSave.checked = !itemToSave.checked;
+    }];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        Item *itemToDelete = self.fetchedResultsController.fetchedObjects[indexPath.row];
+        
+        [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+            [itemToDelete MR_deleteEntityInContext:localContext];
+        }];
+    }
 }
 
 @end

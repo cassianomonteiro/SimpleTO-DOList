@@ -27,6 +27,12 @@ static NSString *ListCellID = @"ListCell";
     self.fetchedResultsController = [List MR_fetchController:fetchRequest delegate:self useFileCache:NO groupedBy:nil inContext:[NSManagedObjectContext MR_defaultContext]];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -74,10 +80,66 @@ static NSString *ListCellID = @"ListCell";
     }
     
     List *list = self.fetchedResultsController.fetchedObjects[indexPath.row];
+    
+    NSUInteger completedItems = [list.items filteredSetUsingPredicate:[NSPredicate predicateWithFormat:@"checked == YES"]].count;
+    NSUInteger pendingItems = list.items.count - completedItems;
+    
+    NSString *itemsSummary = [NSString stringWithFormat:@"%lu completed item%@, %lu pending item%@",
+                              completedItems, (completedItems == 1) ? @"" : @"s",
+                              pendingItems, (pendingItems == 1) ? @"" : @"s"];
+    
     cell.textLabel.text = list.name;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu item%@", list.items.count, (list.items.count > 1) ? @"s" : @""];
+    cell.detailTextLabel.text = itemsSummary;
     
     return cell;
+}
+
+#pragma mark - <UITableViewDelegate>
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self confirmDeletionOfList:self.fetchedResultsController.fetchedObjects[indexPath.row]];
+    }
+}
+
+#pragma mark - Helpers
+
+- (void)confirmDeletionOfList:(List *)listToDelete
+{
+    NSSet *pendingItems = [listToDelete.items filteredSetUsingPredicate:[NSPredicate predicateWithFormat:@"checked == NO"]];
+    
+    if (pendingItems.count > 0) {
+        
+        NSString *title = @"Uncompleted list!";
+        NSString *message = [NSString stringWithFormat:@"The list %@ still has %ld pending items! Are you sure you want to delete it?", listToDelete.name, pendingItems.count];
+        
+        UIAlertController *deleteConfirmation =
+        [AlertControllerFactory deleteAlertControllerWithTitle:title
+                                                    andMessage:message
+                                               deletionHandler:^{
+                                                   [self deleteList:listToDelete];
+                                               } cancelHandler:^{
+                                                   self.tableView.editing = NO;
+                                               }];
+        
+        [self presentViewController:deleteConfirmation animated:YES completion:nil];
+    }
+    else {
+        [self deleteList:listToDelete];
+    }
+}
+
+- (void)deleteList:(List *)listToDelete
+{
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+        [listToDelete MR_deleteEntityInContext:localContext];
+    }];
 }
 
 @end
