@@ -17,6 +17,7 @@
 		F02C0E3B1DB8308D009EDAFC /* ItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E3A1DB8308D009EDAFC /* ItemVC.m */; };
 		F02C0E3E1DB83216009EDAFC /* CoreDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E3D1DB83216009EDAFC /* CoreDataTableViewController.m */; };
 		F02C0E431DB83624009EDAFC /* ListVCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E421DB83624009EDAFC /* ListVCTests.m */; };
+		F02C0E461DB8464A009EDAFC /* AlertControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E451DB8464A009EDAFC /* AlertControllerFactory.m */; };
 		F0E3A5F11DB822BE00C9D078 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F01DB822BE00C9D078 /* main.m */; };
 		F0E3A5F41DB822BE00C9D078 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E3A5F31DB822BE00C9D078 /* AppDelegate.m */; };
 		F0E3A5FA1DB822BE00C9D078 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0E3A5F81DB822BE00C9D078 /* Main.storyboard */; };
@@ -58,6 +59,8 @@
 		F02C0E3C1DB83216009EDAFC /* CoreDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataTableViewController.h; sourceTree = "<group>"; };
 		F02C0E3D1DB83216009EDAFC /* CoreDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataTableViewController.m; sourceTree = "<group>"; };
 		F02C0E421DB83624009EDAFC /* ListVCTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListVCTests.m; sourceTree = "<group>"; };
+		F02C0E441DB8464A009EDAFC /* AlertControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertControllerFactory.h; sourceTree = "<group>"; };
+		F02C0E451DB8464A009EDAFC /* AlertControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertControllerFactory.m; sourceTree = "<group>"; };
 		F0E3A5EC1DB822BE00C9D078 /* SimpleTO-DOList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleTO-DOList.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E3A5F01DB822BE00C9D078 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0E3A5F21DB822BE00C9D078 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,12 +133,14 @@
 		F02C0E351DB83058009EDAFC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F02C0E441DB8464A009EDAFC /* AlertControllerFactory.h */,
+				F02C0E451DB8464A009EDAFC /* AlertControllerFactory.m */,
 				F02C0E3C1DB83216009EDAFC /* CoreDataTableViewController.h */,
 				F02C0E3D1DB83216009EDAFC /* CoreDataTableViewController.m */,
-				F02C0E361DB83077009EDAFC /* ListVC.h */,
-				F02C0E371DB83077009EDAFC /* ListVC.m */,
 				F02C0E391DB8308D009EDAFC /* ItemVC.h */,
 				F02C0E3A1DB8308D009EDAFC /* ItemVC.m */,
+				F02C0E361DB83077009EDAFC /* ListVC.h */,
+				F02C0E371DB83077009EDAFC /* ListVC.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 			files = (
 				F02C0E321DB82AD8009EDAFC /* Item+CoreDataProperties.m in Sources */,
 				F02C0E311DB82AD8009EDAFC /* Item+CoreDataClass.m in Sources */,
+				F02C0E461DB8464A009EDAFC /* AlertControllerFactory.m in Sources */,
 				F02C0E3E1DB83216009EDAFC /* CoreDataTableViewController.m in Sources */,
 				F02C0E3B1DB8308D009EDAFC /* ItemVC.m in Sources */,
 				F02C0E381DB83077009EDAFC /* ListVC.m in Sources */,

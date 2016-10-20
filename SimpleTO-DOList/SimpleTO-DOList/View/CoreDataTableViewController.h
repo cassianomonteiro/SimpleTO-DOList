@@ -24,9 +24,6 @@
 // The controller (this class fetches nothing if this is not set).
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
-// The tableView (to act as a UITableViewController)
-@property (nonatomic, strong) UITableView *fetchedTableView;
-
 // Causes the fetchedResultsController to refetch the data.
 // You almost certainly never need to call this.
 // The NSFetchedResultsController class observes the context

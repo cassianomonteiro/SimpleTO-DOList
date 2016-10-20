@@ -15,9 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Item *> *)fetchRequest;
 
-@property (nonatomic) int64_t id;
-@property (nullable, nonatomic, copy) NSString *itemDescription;
 @property (nonatomic) BOOL checked;
+@property (nonatomic) int64_t itemId;
+@property (nullable, nonatomic, copy) NSString *itemDescription;
 @property (nullable, nonatomic, retain) List *list;
 
 @end

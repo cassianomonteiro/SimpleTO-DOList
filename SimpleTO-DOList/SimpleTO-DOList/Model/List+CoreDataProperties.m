@@ -14,7 +14,8 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"List"];
 }
 
-@dynamic id;
+@dynamic listId;
+@dynamic name;
 @dynamic items;
 
 @end

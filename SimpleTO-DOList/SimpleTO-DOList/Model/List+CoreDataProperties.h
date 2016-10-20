@@ -15,7 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<List *> *)fetchRequest;
 
-@property (nonatomic) int64_t id;
+@property (nonatomic) int64_t listId;
+@property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, retain) NSSet<Item *> *items;
 
 @end

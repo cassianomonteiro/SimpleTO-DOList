@@ -7,6 +7,9 @@
 //
 
 #import "ListVC.h"
+#import "AlertControllerFactory.h"
+
+static NSString *ListCellID = @"ListCell";
 
 @interface ListVC ()
 
@@ -33,7 +36,42 @@
 }
 */
 
-- (IBAction)addTapped:(UIBarButtonItem *)sender {
+- (IBAction)addTapped:(UIBarButtonItem *)sender
+{
+    UIAlertController *alertController =
+    [AlertControllerFactory textFieldAlertControllerWithTitle:@"Give a name to your list:"
+                                               andPlaceHolder:@"Type here the list name"
+                                            completionHandler:^(NSString *text) {
+                                                [self createListWithName:text];
+                                            }];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
+
+- (void)createListWithName:(NSString *)name
+{
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+        List *newList = [List MR_createEntityInContext:localContext];
+        newList.name = name;
+    }];
+}
+
+#pragma - mark - <UITableViewDataSource>
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ListCellID];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ListCellID];
+    }
+    
+    List *list = self.fetchedResultsController.fetchedObjects[indexPath.row];
+    cell.textLabel.text = list.name;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%lu items", list.items.count];
+    
+    return cell;
+}
+
 
 @end
