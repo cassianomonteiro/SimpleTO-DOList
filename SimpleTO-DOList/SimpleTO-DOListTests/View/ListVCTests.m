@@ -46,6 +46,7 @@
     
     // Outlets should be set
     XCTAssertNotNil(self.viewController.tableView);
+    XCTAssertNotNil(self.viewController.loginButton);
     XCTAssertNotNil(self.viewController.addButton);
     
     // Delegates should be set
@@ -53,6 +54,8 @@
     XCTAssertNotNil(self.viewController.tableView.delegate);
     
     // Actions should be set
+    XCTAssertEqual(self.viewController.loginButton.target, self.viewController);
+    XCTAssertEqual(self.viewController.loginButton.action, @selector(loginTapped:));
     XCTAssertEqual(self.viewController.addButton.target, self.viewController);
     XCTAssertEqual(self.viewController.addButton.action, @selector(addTapped:));
 }

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Firebase.h>
 #import <MagicalRecord/MagicalRecord.h>
+#import <FirebaseAuthUI/FirebaseAuthUI.h>
 
 @implementation AppDelegate
 
@@ -72,6 +73,12 @@ static BOOL isRunningTests(void) {
     
     // Saves changes in the application's managed object context before the application terminates.
     [MagicalRecord cleanUp];
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
+{
+    NSString *sourceApplication = options[UIApplicationOpenURLOptionsSourceApplicationKey];
+    return [[FIRAuthUI defaultAuthUI] handleOpenURL:url sourceApplication:sourceApplication];
 }
 
 @end

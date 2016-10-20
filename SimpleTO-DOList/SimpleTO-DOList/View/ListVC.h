@@ -11,8 +11,10 @@
 
 @interface ListVC : CoreDataTableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
+- (IBAction)loginTapped:(UIBarButtonItem *)sender;
 - (IBAction)addTapped:(UIBarButtonItem *)sender;
 
 @end

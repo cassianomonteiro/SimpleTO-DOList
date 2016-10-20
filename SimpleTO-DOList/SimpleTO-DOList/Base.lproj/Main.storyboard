@@ -19,18 +19,18 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gGG-bG-4NE" id="L98-dp-yCZ">
-                                    <frame key="frameInset" width="308" height="43.5"/>
+                                    <frame key="frameInset" width="308" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n3d-vG-YhH">
-                                            <frame key="frameInset" minX="15" minY="5" width="33.5" height="20.5"/>
+                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mSL-6a-a9b">
-                                            <frame key="frameInset" minX="15" minY="25.5" width="44" height="14.5"/>
+                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -49,6 +49,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="TO-DO Lists" id="hwB-13-GuK">
+                        <barButtonItem key="leftBarButtonItem" id="0le-Zd-oQM">
+                            <connections>
+                                <action selector="loginTapped:" destination="fbS-CH-siI" id="01u-hN-lWS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fsJ-na-zgs">
                             <connections>
                                 <action selector="addTapped:" destination="fbS-CH-siI" id="B20-8a-ory"/>
@@ -57,6 +62,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="fsJ-na-zgs" id="qk9-UA-JV4"/>
+                        <outlet property="loginButton" destination="0le-Zd-oQM" id="UNu-GO-Py7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXF-mF-F4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -76,11 +82,11 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8In-Rs-9eq" id="dNy-2B-xGS">
-                                    <frame key="frameInset" width="328" height="43.5"/>
+                                    <frame key="frameInset" width="328" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cvL-q8-gTX">
-                                            <frame key="frameInset" minX="66" width="262" height="43.5"/>
+                                            <frame key="frameInset" minX="66" width="262" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>

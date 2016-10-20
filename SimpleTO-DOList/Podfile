@@ -7,7 +7,7 @@ target 'SimpleTO-DOList' do
 
   # Pods for SimpleTO-DOList
   pod 'FontAwesomeIconFactory'
-  pod 'Firebase/Auth'
+  pod 'FirebaseUI/Google'
   pod 'Firebase/Crash'
   pod 'MagicalRecord'
   pod 'RestKit'

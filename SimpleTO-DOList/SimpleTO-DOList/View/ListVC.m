@@ -9,11 +9,16 @@
 #import "ListVC.h"
 #import "ItemVC.h"
 #import "AlertControllerFactory.h"
+#import <FontAwesomeIconFactory.h>
+#import <FirebaseAuth/FirebaseAuth.h>
+#import <GoogleSignIn/GoogleSignIn.h>
+#import <FirebaseGoogleAuthUI/FirebaseGoogleAuthUI.h>
 
 static NSString *ListCellID = @"ListCell";
 
-@interface ListVC ()
-
+@interface ListVC () <FIRAuthUIDelegate>
+@property (nonatomic) FIRAuth *auth;
+@property (nonatomic) FIRAuthUI *authUI;
 @end
 
 @implementation ListVC
@@ -25,12 +30,35 @@ static NSString *ListCellID = @"ListCell";
     NSFetchRequest *fetchRequest = [List MR_createFetchRequest];
     fetchRequest.sortDescriptors = @[];
     self.fetchedResultsController = [List MR_fetchController:fetchRequest delegate:self useFileCache:NO groupedBy:nil inContext:[NSManagedObjectContext MR_defaultContext]];
+    
+    self.auth = [FIRAuth auth];
+    self.authUI = [FIRAuthUI defaultAuthUI];
+    self.authUI.providers = @[[[FIRGoogleAuthUI alloc] init]];
+    self.authUI.delegate = self;
+    
+    [self.auth signInAnonymouslyWithCompletion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+        NSLog(@"%@ id: %@", user.isAnonymous ? @"Anonymoys" : @"Signedin", user.uid);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self refreshLoginButton];
     [self.tableView reloadData];
+}
+
+- (void)refreshLoginButton
+{
+    NIKFontAwesomeIconFactory *factory = [NIKFontAwesomeIconFactory buttonIconFactory];
+    factory.size = 24.f;
+    
+    if (!self.auth.currentUser || self.auth.currentUser.isAnonymous) {
+        self.loginButton.image = [factory createImageForIcon:NIKFontAwesomeIconSignIn];
+    }
+    else {
+        self.loginButton.image = [factory createImageForIcon:NIKFontAwesomeIconSignOut];
+    }
 }
 
 #pragma mark - Navigation
@@ -61,6 +89,39 @@ static NSString *ListCellID = @"ListCell";
                                             }];
     
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (IBAction)loginTapped:(UIBarButtonItem *)sender
+{
+    if (!self.auth.currentUser || self.auth.currentUser.isAnonymous) {
+        UIViewController *controller = [self.authUI authViewController];
+        [self presentViewController:controller animated:YES completion:nil];
+    } else {
+        [self signOut];
+    }
+    
+    [self refreshLoginButton];
+}
+
+- (void)authUI:(FIRAuthUI *)authUI didSignInWithUser:(FIRUser *)user error:(NSError *)error
+{
+    NSLog(@"%@ id: %@", user.isAnonymous ? @"Anonymous" : @"Signedin", user.uid);
+}
+
+- (void)signOut
+{
+    // sign out from Firebase
+    if ([self.auth signOut:nil]) {
+        
+        // sign out from all providers (wipes provider tokens too)
+        for (id<FIRAuthProviderUI> provider in self.authUI.providers) {
+            [provider signOut];
+        }
+    }
+    
+    [self.auth signInAnonymouslyWithCompletion:^(FIRUser * _Nullable user, NSError * _Nullable error) {
+        NSLog(@"%@ id: %@", user.isAnonymous ? @"Anonymoys" : @"Signedin", user.uid);
+    }];
 }
 
 #pragma - mark - <UITableViewDataSource>
