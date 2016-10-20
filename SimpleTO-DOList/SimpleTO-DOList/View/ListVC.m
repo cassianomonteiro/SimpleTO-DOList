@@ -53,20 +53,14 @@ static NSString *ListCellID = @"ListCell";
 {
     UIAlertController *alertController =
     [AlertControllerFactory textFieldAlertControllerWithTitle:@"Give a name to your list:"
+                                                      andText:nil
                                                andPlaceHolder:@"Type here the list name"
+                                                   actionName:@"Create"
                                             completionHandler:^(NSString *text) {
                                                 [self createListWithName:text];
                                             }];
     
     [self presentViewController:alertController animated:YES completion:nil];
-}
-
-- (void)createListWithName:(NSString *)name
-{
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
-        List *newList = [List MR_createEntityInContext:localContext];
-        newList.name = name;
-    }];
 }
 
 #pragma - mark - <UITableViewDataSource>
@@ -108,6 +102,22 @@ static NSString *ListCellID = @"ListCell";
     }
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    List *selectedList = self.fetchedResultsController.fetchedObjects[indexPath.row];
+    
+    UIAlertController *alertController =
+    [AlertControllerFactory textFieldAlertControllerWithTitle:@"Edit list name"
+                                                      andText:selectedList.name
+                                               andPlaceHolder:@"Type here the list name"
+                                                   actionName:@"Save"
+                                            completionHandler:^(NSString *text) {
+                                                [self updateList:selectedList withName:text];
+                                            }];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 #pragma mark - Helpers
 
 - (void)confirmDeletionOfList:(List *)listToDelete
@@ -133,6 +143,24 @@ static NSString *ListCellID = @"ListCell";
     else {
         [self deleteList:listToDelete];
     }
+}
+
+#pragma mark - CRUD
+
+- (void)createListWithName:(NSString *)name
+{
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+        List *newList = [List MR_createEntityInContext:localContext];
+        newList.name = name;
+    }];
+}
+
+- (void)updateList:(List *)list withName:(NSString *)name
+{
+    [MagicalRecord saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+        List *listToUpdate = [list MR_inContext:localContext];
+        listToUpdate.name = name;
+    }];
 }
 
 - (void)deleteList:(List *)listToDelete

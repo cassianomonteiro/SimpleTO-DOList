@@ -10,7 +10,7 @@
 
 @implementation AlertControllerFactory
 
-+ (UIAlertController *)textFieldAlertControllerWithTitle:(NSString *)title andPlaceHolder:(NSString *)placeHolder completionHandler:(void (^)(NSString *))completionHandler
++ (UIAlertController *)textFieldAlertControllerWithTitle:(NSString *)title andText:(NSString *)text andPlaceHolder:(NSString *)placeHolder actionName:(NSString *)actionName completionHandler:(void (^)(NSString *))completionHandler
 {
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -18,7 +18,7 @@
     // Keep reference to the textFieldObserver, to remove it on alert dismissal
     id __block textFieldObserver;
     
-    UIAlertAction *createAction = [UIAlertAction actionWithTitle:@"Create" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    UIAlertAction *createAction = [UIAlertAction actionWithTitle:actionName style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         // Remove observer to void memory leaks
         [[NSNotificationCenter defaultCenter] removeObserver:textFieldObserver];
@@ -28,9 +28,10 @@
         completionHandler(textField.text);
     }];
     // Start action disabled while textfield is empty
-    createAction.enabled = NO;
+    createAction.enabled = (text && text.length > 0);
     
     [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.text = text?:@"";
         textField.placeholder = placeHolder;
     
         // Add observer to enable action when textfield has some text.

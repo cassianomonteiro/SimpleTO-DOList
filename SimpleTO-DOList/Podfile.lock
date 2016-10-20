@@ -27,6 +27,7 @@ PODS:
     - GoogleSymbolUtilities (~> 1.1)
     - GoogleUtilities (~> 1.2)
   - FirebaseInstanceID (1.0.8)
+  - FontAwesomeIconFactory (2.1.1)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleNetworkingUtilities (1.2.2):
@@ -67,6 +68,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Crash
+  - FontAwesomeIconFactory
   - MagicalRecord
   - OCMock
   - RestKit
@@ -79,6 +81,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 5a885548bbc5f0c410b04f8e9ac9d73ff1221907
   FirebaseCrash: 2efeb3715b76ac843b841529ce413efb67e5fd4d
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  FontAwesomeIconFactory: bb9ce26d3dd13044854a82d380023c8e7d3ebf1a
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
@@ -91,6 +94,6 @@ SPEC CHECKSUMS:
   SOCKit: c7376ac262bea9115b8f749358f762522a47d392
   TransitionKit: 9ceccda4cd0cdc0a05ef85eb235e5a3292c3c250
 
-PODFILE CHECKSUM: c36c9293bfe722462067fa77af95479e765a13be
+PODFILE CHECKSUM: 8e621a62b67867933dd2af8dce758fb94944d7cd
 
 COCOAPODS: 1.0.1

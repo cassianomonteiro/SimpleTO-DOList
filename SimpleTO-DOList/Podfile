@@ -6,6 +6,7 @@ target 'SimpleTO-DOList' do
   # use_frameworks!
 
   # Pods for SimpleTO-DOList
+  pod 'FontAwesomeIconFactory'
   pod 'Firebase/Auth'
   pod 'Firebase/Crash'
   pod 'MagicalRecord'
