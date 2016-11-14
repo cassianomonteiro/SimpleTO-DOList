@@ -1,0 +1,11 @@
+{
+    "id": "1",
+    "type": "lists",
+    "attributes": {
+        "id": 1,
+        "title": "Boring stuffs",
+        "user_id": 2,
+        "createdAt": "2016-10-20T16:40:43.878Z",
+        "updatedAt": "2016-10-20T16:40:43.878Z"
+    }
+}

@@ -7,12 +7,20 @@
 //
 
 #import <MagicalRecord/MagicalRecord.h>
+#import <RestKit/RestKit.h>
 
 @class Item;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface List : NSManagedObject
+
+/**
+ * Mapping object for json attributes into object properties
+ *
+ * @returns RKObjectMapping object
+ */
++ (RKEntityMapping *)responseMapping;
 
 @end
 

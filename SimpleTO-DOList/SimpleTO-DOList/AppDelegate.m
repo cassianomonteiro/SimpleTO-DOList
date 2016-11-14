@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Firebase.h>
 #import <MagicalRecord/MagicalRecord.h>
+#import <RestKit/RestKit.h>
 #import <FirebaseAuthUI/FirebaseAuthUI.h>
 
 @implementation AppDelegate
@@ -45,6 +46,14 @@ static BOOL isRunningTests(void) {
 #endif
     
     [MagicalRecord setupAutoMigratingCoreDataStack];
+    
+    
+    [RKManagedObjectStore setDefaultStore:[[RKManagedObjectStore alloc] initWithPersistentStoreCoordinator:[NSPersistentStoreCoordinator MR_defaultStoreCoordinator]]];
+    [[RKManagedObjectStore defaultStore] createManagedObjectContexts];
+    // Configure a managed object cache to ensure we do not create duplicate objects
+    [RKManagedObjectStore defaultStore].managedObjectCache = [[RKInMemoryManagedObjectCache alloc] initWithManagedObjectContext:[RKManagedObjectStore defaultStore].persistentStoreManagedObjectContext];
+    
+    
     [FIRApp configure];
     
     return YES;

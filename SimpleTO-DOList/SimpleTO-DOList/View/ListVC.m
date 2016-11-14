@@ -139,9 +139,9 @@ static NSString *ListCellID = @"ListCell";
     NSUInteger completedItems = [list.items filteredSetUsingPredicate:[NSPredicate predicateWithFormat:@"checked == YES"]].count;
     NSUInteger pendingItems = list.items.count - completedItems;
     
-    NSString *itemsSummary = [NSString stringWithFormat:@"%lu completed item%@, %lu pending item%@",
-                              completedItems, (completedItems == 1) ? @"" : @"s",
-                              pendingItems, (pendingItems == 1) ? @"" : @"s"];
+    NSString *itemsSummary = [NSString stringWithFormat:@"%@ completed item%@, %@ pending item%@",
+                              @(completedItems), (completedItems == 1) ? @"" : @"s",
+                              @(pendingItems), (pendingItems == 1) ? @"" : @"s"];
     
     cell.textLabel.text = list.name;
     cell.detailTextLabel.text = itemsSummary;
@@ -188,7 +188,7 @@ static NSString *ListCellID = @"ListCell";
     if (pendingItems.count > 0) {
         
         NSString *title = @"Uncompleted list!";
-        NSString *message = [NSString stringWithFormat:@"The list %@ still has %ld pending items! Are you sure you want to delete it?", listToDelete.name, pendingItems.count];
+        NSString *message = [NSString stringWithFormat:@"The list %@ still has %@ pending items! Are you sure you want to delete it?", listToDelete.name, @(pendingItems.count)];
         
         UIAlertController *deleteConfirmation =
         [AlertControllerFactory deleteAlertControllerWithTitle:title

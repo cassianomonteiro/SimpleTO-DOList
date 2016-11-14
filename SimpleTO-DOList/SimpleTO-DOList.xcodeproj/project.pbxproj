@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		4D982A93BC3C36DAA416BE28 /* libPods-SimpleTO-DOList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF6F8B9B78314D04353D4217 /* libPods-SimpleTO-DOList.a */; };
+		F003BF691DBA6F8C003114DC /* UserResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = F003BF681DBA6F8C003114DC /* UserResponse.json */; };
+		F003BF6B1DBA6FC7003114DC /* Server.rb in Resources */ = {isa = PBXBuildFile; fileRef = F003BF6A1DBA6FC7003114DC /* Server.rb */; };
+		F003BF6E1DBA7EEF003114DC /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F003BF6D1DBA7EEF003114DC /* User.m */; };
+		F003BF701DBA88C1003114DC /* User.json in Resources */ = {isa = PBXBuildFile; fileRef = F003BF6F1DBA88C1003114DC /* User.json */; };
+		F003BF721DBA88FF003114DC /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F003BF711DBA88FF003114DC /* UserTests.m */; };
+		F003BF741DBAA934003114DC /* ListsResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = F003BF731DBAA934003114DC /* ListsResponse.json */; };
+		F00F5DE61DBA3A0A00C04123 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F00F5DE51DBA3A0A00C04123 /* ConnectionManager.m */; };
+		F014FC481DBA4CCA00BCD4ED /* ConnectionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F014FC471DBA4CCA00BCD4ED /* ConnectionManagerTests.m */; };
+		F014FC4C1DBA4D6300BCD4ED /* List.json in Resources */ = {isa = PBXBuildFile; fileRef = F014FC4B1DBA4D6300BCD4ED /* List.json */; };
+		F014FC4E1DBA4DE600BCD4ED /* ListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F014FC4D1DBA4DE600BCD4ED /* ListTests.m */; };
+		F014FC511DBA549100BCD4ED /* TestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F014FC501DBA549100BCD4ED /* TestsManager.m */; };
 		F02C0E271DB82562009EDAFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F02C0E261DB82562009EDAFC /* GoogleService-Info.plist */; };
 		F02C0E311DB82AD8009EDAFC /* Item+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E2A1DB82AD8009EDAFC /* Item+CoreDataClass.m */; };
 		F02C0E321DB82AD8009EDAFC /* Item+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F02C0E2C1DB82AD8009EDAFC /* Item+CoreDataProperties.m */; };
@@ -44,6 +55,20 @@
 		24392DAB441ECB97F63662F1 /* Pods-SimpleTO-DOList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTO-DOList.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTO-DOList/Pods-SimpleTO-DOList.release.xcconfig"; sourceTree = "<group>"; };
 		BF6F8B9B78314D04353D4217 /* libPods-SimpleTO-DOList.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SimpleTO-DOList.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47D79002DEBD163B3EF2C5D /* Pods-SimpleTO-DOListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTO-DOListTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTO-DOListTests/Pods-SimpleTO-DOListTests.release.xcconfig"; sourceTree = "<group>"; };
+		F003BF681DBA6F8C003114DC /* UserResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserResponse.json; sourceTree = "<group>"; };
+		F003BF6A1DBA6FC7003114DC /* Server.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Server.rb; sourceTree = "<group>"; };
+		F003BF6C1DBA7EEF003114DC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F003BF6D1DBA7EEF003114DC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		F003BF6F1DBA88C1003114DC /* User.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = User.json; sourceTree = "<group>"; };
+		F003BF711DBA88FF003114DC /* UserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTests.m; sourceTree = "<group>"; };
+		F003BF731DBAA934003114DC /* ListsResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ListsResponse.json; sourceTree = "<group>"; };
+		F00F5DE41DBA3A0A00C04123 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
+		F00F5DE51DBA3A0A00C04123 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		F014FC471DBA4CCA00BCD4ED /* ConnectionManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManagerTests.m; sourceTree = "<group>"; };
+		F014FC4B1DBA4D6300BCD4ED /* List.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = List.json; sourceTree = "<group>"; };
+		F014FC4D1DBA4DE600BCD4ED /* ListTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTests.m; sourceTree = "<group>"; };
+		F014FC4F1DBA549100BCD4ED /* TestsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestsManager.h; sourceTree = "<group>"; };
+		F014FC501DBA549100BCD4ED /* TestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestsManager.m; sourceTree = "<group>"; };
 		F02C0E261DB82562009EDAFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F02C0E291DB82AD8009EDAFC /* Item+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+CoreDataClass.h"; sourceTree = "<group>"; };
 		F02C0E2A1DB82AD8009EDAFC /* Item+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -117,6 +142,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F00F5DE21DBA39CE00C04123 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				F00F5DE41DBA3A0A00C04123 /* ConnectionManager.h */,
+				F00F5DE51DBA3A0A00C04123 /* ConnectionManager.m */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		F00F5DE31DBA39E900C04123 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				F014FC471DBA4CCA00BCD4ED /* ConnectionManagerTests.m */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		F014FC491DBA4CD200BCD4ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F014FC4D1DBA4DE600BCD4ED /* ListTests.m */,
+				F003BF711DBA88FF003114DC /* UserTests.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F014FC4A1DBA4D0200BCD4ED /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				F014FC4B1DBA4D6300BCD4ED /* List.json */,
+				F003BF731DBAA934003114DC /* ListsResponse.json */,
+				F003BF6A1DBA6FC7003114DC /* Server.rb */,
+				F014FC4F1DBA549100BCD4ED /* TestsManager.h */,
+				F014FC501DBA549100BCD4ED /* TestsManager.m */,
+				F003BF6F1DBA88C1003114DC /* User.json */,
+				F003BF681DBA6F8C003114DC /* UserResponse.json */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		F02C0E281DB82AB0009EDAFC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +193,8 @@
 				F02C0E2E1DB82AD8009EDAFC /* List+CoreDataClass.m */,
 				F02C0E2F1DB82AD8009EDAFC /* List+CoreDataProperties.h */,
 				F02C0E301DB82AD8009EDAFC /* List+CoreDataProperties.m */,
+				F003BF6C1DBA7EEF003114DC /* User.h */,
+				F003BF6D1DBA7EEF003114DC /* User.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,8 +246,9 @@
 		F0E3A5EE1DB822BE00C9D078 /* SimpleTO-DOList */ = {
 			isa = PBXGroup;
 			children = (
-				F02C0E351DB83058009EDAFC /* View */,
+				F00F5DE21DBA39CE00C04123 /* Business */,
 				F02C0E281DB82AB0009EDAFC /* Model */,
+				F02C0E351DB83058009EDAFC /* View */,
 				F0E3A5F21DB822BE00C9D078 /* AppDelegate.h */,
 				F0E3A5F31DB822BE00C9D078 /* AppDelegate.m */,
 				F0E3A5F81DB822BE00C9D078 /* Main.storyboard */,
@@ -205,6 +273,9 @@
 		F0E3A60B1DB822BE00C9D078 /* SimpleTO-DOListTests */ = {
 			isa = PBXGroup;
 			children = (
+				F014FC4A1DBA4D0200BCD4ED /* Fixtures */,
+				F00F5DE31DBA39E900C04123 /* Business */,
+				F014FC491DBA4CD200BCD4ED /* Model */,
 				F02C0E411DB83607009EDAFC /* View */,
 				F0E3A60E1DB822BE00C9D078 /* Info.plist */,
 			);
@@ -312,6 +383,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F003BF701DBA88C1003114DC /* User.json in Resources */,
+				F003BF691DBA6F8C003114DC /* UserResponse.json in Resources */,
+				F014FC4C1DBA4D6300BCD4ED /* List.json in Resources */,
+				F003BF741DBAA934003114DC /* ListsResponse.json in Resources */,
+				F003BF6B1DBA6FC7003114DC /* Server.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F003BF6E1DBA7EEF003114DC /* User.m in Sources */,
 				F02C0E321DB82AD8009EDAFC /* Item+CoreDataProperties.m in Sources */,
 				F02C0E311DB82AD8009EDAFC /* Item+CoreDataClass.m in Sources */,
 				F02C0E461DB8464A009EDAFC /* AlertControllerFactory.m in Sources */,
@@ -424,6 +501,7 @@
 				F02C0E341DB82AD8009EDAFC /* List+CoreDataProperties.m in Sources */,
 				F0E3A5F41DB822BE00C9D078 /* AppDelegate.m in Sources */,
 				F0E3A5F11DB822BE00C9D078 /* main.m in Sources */,
+				F00F5DE61DBA3A0A00C04123 /* ConnectionManager.m in Sources */,
 				F02C0E331DB82AD8009EDAFC /* List+CoreDataClass.m in Sources */,
 				F0E3A5FD1DB822BE00C9D078 /* SimpleTO_DOList.xcdatamodeld in Sources */,
 			);
@@ -433,6 +511,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F014FC511DBA549100BCD4ED /* TestsManager.m in Sources */,
+				F014FC481DBA4CCA00BCD4ED /* ConnectionManagerTests.m in Sources */,
+				F003BF721DBA88FF003114DC /* UserTests.m in Sources */,
+				F014FC4E1DBA4DE600BCD4ED /* ListTests.m in Sources */,
 				F02C0E431DB83624009EDAFC /* ListVCTests.m in Sources */,
 				F02C0E481DB84C7A009EDAFC /* ItemVCTests.m in Sources */,
 			);
